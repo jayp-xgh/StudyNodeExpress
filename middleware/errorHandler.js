@@ -21,7 +21,6 @@ const errorHendler = (err, req, res, next ) => {
       console.log("No Error, All good !");
     break;
   }
-  
 };
 
 module.exports = errorHendler;
