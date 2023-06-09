@@ -1,0 +1,64 @@
+[
+  {
+    "_id": "1c836034-9181-407c-90d3-fd29fe1c7535",
+    "colId": "4f6659eb-7dc6-4ea1-8492-cfe609b3cb96",
+    "containerId": "",
+    "name": "Register",
+    "url": "http://localhost:5001/api/users/register",
+    "method": "POST",
+    "sortNum": 10000,
+    "created": "2023-06-09T03:58:42.538Z",
+    "modified": "2023-06-09T04:01:25.954Z",
+    "headers": [],
+    "params": [],
+    "body": {
+      "type": "json",
+      "raw": "{\n  \"username\": \"test45\",\n  \"email\": \"test45@gmail.com\",\n  \"password\": \"test45\"\n}",
+      "form": []
+    },
+    "tests": []
+  },
+  {
+    "_id": "896d42bb-e030-472f-84c7-3e01756d307f",
+    "colId": "4f6659eb-7dc6-4ea1-8492-cfe609b3cb96",
+    "containerId": "",
+    "name": "Login",
+    "url": "http://localhost:5001/api/users/login",
+    "method": "POST",
+    "sortNum": 20000,
+    "created": "2023-06-09T04:00:07.012Z",
+    "modified": "2023-06-09T04:02:03.670Z",
+    "headers": [],
+    "params": [],
+    "body": {
+      "type": "json",
+      "raw": "{\n  \"email\": \"test45@gmail.com\",\n  \"password\": \"test45\"\n}",
+      "form": []
+    },
+    "tests": []
+  },
+  {
+    "_id": "ce4e4105-2732-44a1-a84d-aade79453499",
+    "colId": "4f6659eb-7dc6-4ea1-8492-cfe609b3cb96",
+    "containerId": "",
+    "name": "Current",
+    "url": "http://localhost:5001/api/users/current",
+    "method": "GET",
+    "sortNum": 30000,
+    "created": "2023-06-09T04:00:30.705Z",
+    "modified": "2023-06-09T04:30:10.437Z",
+    "headers": [
+      {
+        "name": "Authorization",
+        "value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7InVzZXJuYW1lIjoidGVzdDQ1IiwiZW1haWwiOiJ0ZXN0NDVAZ21haWwuY29tIiwiaWQiOiI2NDgyYTQyMGI1ODZhYTdhZTRjZTM1ZDIifSwiaWF0IjoxNjg2Mjg0MzMzLCJleHAiOjE2ODYyOTg3MzN9.QltzXvhinU0XCHPrs98Sbq8yxsnPnXKk0e_8s7wki-c",
+        "isDisabled": true
+      }
+    ],
+    "params": [],
+    "auth": {
+      "type": "bearer",
+      "bearer": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7InVzZXJuYW1lIjoidGVzdDQ1IiwiZW1haWwiOiJ0ZXN0NDVAZ21haWwuY29tIiwiaWQiOiI2NDgyYTQyMGI1ODZhYTdhZTRjZTM1ZDIifSwiaWF0IjoxNjg2Mjg1MDAyLCJleHAiOjE2ODYyODUxMjJ9.vgZcOduQXhpwTVRDu4ImBk_sokg6Apk9CmwMir4IFYs"
+    },
+    "tests": []
+  }
+]

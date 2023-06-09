@@ -6,7 +6,7 @@ const errorHendler = (err, req, res, next ) => {
       res.json({ title: 'Validation failed', message: err.message,  stackTrace: err.stack } );
       break;
     case constants.UNAUTHORIZED:
-      res.json({ title: 'Un authorized', message: err.message,  stackTrace: err.stack });
+      res.json({ title: 'Unauthorized', message: err.message,  stackTrace: err.stack });
       break;
     case constants.NOT_FOUND:
       res.json({ title: 'Not Found', message: err.message,  stackTrace: err.stack});

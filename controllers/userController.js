@@ -1,9 +1,10 @@
-const asyncHendler = require('express-async-handler');
+const asyncHandler = require('express-async-handler');
 const bcriypt = require('bcrypt');
 const jwt = require('jsonwebtoken');
 const User = require('../models/userModel');
 
-const registerUser = asyncHendler(async (req, res) => {
+const registerUser = asyncHandler(async (req, res) => {
+    // console.log(req.body);
     const { username, email, password } = req.body;
     if(!username || !email || !password){
         res.status(400);
@@ -30,7 +31,7 @@ const registerUser = asyncHendler(async (req, res) => {
     res.json({message: "register the user"});
 });
 
-const loginUser = asyncHendler(async (req, res) => {
+const loginUser = asyncHandler(async (req, res) => {
     const { email , password } = req.body;
     if(!email || !password){
         res.status(400);
@@ -46,7 +47,7 @@ const loginUser = asyncHendler(async (req, res) => {
             }
         }, 
             process.env.ACCESS_TOKEN_SECRET, {
-                expiresIn: '1m' 
+                expiresIn: '240m' 
             }
         );
         res.status(200).json({ accesToken });
@@ -57,8 +58,9 @@ const loginUser = asyncHendler(async (req, res) => {
     }
 });
 
-const currentUser = asyncHendler(async (req, res) => {
-    res.json({message: "Current user information"});
+const currentUser = asyncHandler(async (req, res) => {
+    console.log('current user');
+    res.json({ message: "Current user information" });
 });
 
 module.exports = { registerUser, loginUser, currentUser };

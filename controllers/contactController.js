@@ -1,4 +1,4 @@
-const asyncHendler = require('express-async-handler');
+const asyncHandler = require('express-async-handler');
 const Contact = require('../models/contactModel');
 
 const getContacts = async (req, res) => {
@@ -6,7 +6,7 @@ const getContacts = async (req, res) => {
     res.status(200).json(contacts);
 };
 
-const createContact = asyncHendler(async (req, res) => {
+const createContact = asyncHandler(async (req, res) => {
     console.log(`the body is : ${req.body}`);
     const {name, email, phone } = req.body;
     if(!name || !email ||!phone){
@@ -21,7 +21,7 @@ const createContact = asyncHendler(async (req, res) => {
     res.status(201).json(connect);
 });
 
-const getContact =  asyncHendler(async (req, res) => {
+const getContact =  asyncHandler(async (req, res) => {
     const contact = await Contact.findById(req.params.id);
     if(!contact){
         res.status(404);
@@ -30,7 +30,7 @@ const getContact =  asyncHendler(async (req, res) => {
     res.status(200).json(contact);
 });
 
-const updateContact =  asyncHendler(async (req, res) => {
+const updateContact =  asyncHandler(async (req, res) => {
     const contact = await Contact.findById(req.params.id);
 
     if(!contact){
@@ -47,7 +47,7 @@ const updateContact =  asyncHendler(async (req, res) => {
     res.status(200).json(updateContact);
 });
 
-const deleteContact = asyncHendler(async (req, res) => {
+const deleteContact = asyncHandler(async (req, res) => {
     const contact = await Contact.findByIdAndDelete(req.params.id); 
     if(!contact){
         res.status(404);
